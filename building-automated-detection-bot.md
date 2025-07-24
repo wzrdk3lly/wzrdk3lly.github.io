@@ -57,7 +57,7 @@ I then used an AWS lambda function + EventBridge schedular to optomize the bot's
 
 If you complete the above steps, you can get fancy and add better features to your bot. I eventually modified the bot to show overall statistics a bit better. Overall the project singificantly impacted how engineers and decision makers would select 3rd party vendors. After selection this tool was used to track 3rd party vendors progress. 
 
-![alt text](image-1.png)
+<img src="image-1.png" width="500" height="500">
 
 
 ## Lessons Learned 
