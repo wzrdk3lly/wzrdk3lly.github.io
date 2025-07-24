@@ -6,7 +6,7 @@ Without revealing too much about the custom tool I built, I want to walk through
 
 My detection rate bot captured newly deployed domains from threat actors and ran each of these domains through various third-party APIs. The output included detection rate stats for each third party and a full report of which domains were detected. I set up this bot to run weekly and send my team and me a report. *Key info about threat actors and third-party tools has been redacted for obvious reasons.
 
-<img src="image.png" width="500" height="500">
+<center><img src="image.png" width="500" height="500"></center>
 
 ## Tech Stack
 
@@ -56,7 +56,7 @@ Later, I used an AWS Lambda function plus EventBridge Scheduler to optimize the 
 
 If you complete the above steps, you can get fancy and add even better features to your bot. I eventually modified the bot to show overall statistics more clearly. Overall, this project significantly impacted how engineers and decision-makers selected third-party vendors. After selection, this tool was used to track vendor progress over time.
 
-<img src="image-1.png" width="500" height="500">
+<center><img src="image-1.png" width="500" height="500"></center>
 
 ## Lessons Learned
 
