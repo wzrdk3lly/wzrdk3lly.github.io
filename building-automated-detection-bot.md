@@ -1,8 +1,8 @@
-# Endpoint Security: My Journey Building a Detection Rate Bot
+# Domain Blocking: My Journey Building a Detection Rate Bot
 
 ## Intro
 
-Without revealing too much about the custom tool I built, I want to walk through the high-level steps I took so any researcher can build their own bot to detect and report stats on threat actor activities.
+Without revealing too much about the custom tool I built, I want to walk through the high-level steps I took so any researcher can build their own bot to detect and report stats on domain blocking tools.
 
 My detection rate bot captured newly deployed domains from threat actors and ran each of these domains through various third-party APIs. The output included detection rate stats for each third party and a full report of which domains were detected. I set up this bot to run weekly and send my team and me a report. *Key info about threat actors and third-party tools has been redacted for obvious reasons.
 
