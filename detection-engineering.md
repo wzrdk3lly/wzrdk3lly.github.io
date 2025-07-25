@@ -1,0 +1,79 @@
+# Detection Engineering: Building a Custom Detection Rate Bot
+
+## Intro
+
+Without revealing too much about this custom tool, I want to walk through the high-level steps I took to build a deteciton rate bot. This tool can help any researcher who is interested in learning how to automate their process for detecting when a threat actor deploys a domain AND what tools do a great job at flagging these domains.
+
+At a high level, the tool I built is a detection rate bot that captured newly deployed domains from threat actors and ran each of these domains through various third-party APIs. The output included detection rate stats for each third party and a full report of the gaps in each third party API. I set up this bot to run throughout the week and send my team and I a report. *Key info about threat actors and third-party tools has been redacted from the screenshot below.
+
+<center><img src="image.png" width="800" height="500"></center>
+
+## Tech Stack + Reqs
+
+Some things you'll need to recreate this kind of bot:
+
+- Python programming experience (Cursor AI is your friend, lol)
+- API access to search engines focused on connected devices (e.g., Shodan, ZoomEye)
+- API access to third-party domain flagging tools
+- Webhook to your platform of choice (Discord)
+- AWS cloud basics
+
+## Building the Detection Bot
+
+When building this tool, my primary focus was automation. I wanted it to be easy for anyone on my team to set up.
+
+I built it as a CLI tool. That way, I could automate it later with a cron job, but also run it manually whenever needed.
+
+The bot has four main components:
+- URL collection using a search engine tool
+- URL analysis using third-party detection tools
+- Reporting
+- Logging
+
+Here's my pseudocode for how I wanted this bot to operate:
+
+```
+# Organize threat actor IOCs into queries that can be used on OSINT platforms
+# Set up an API to pull latest threat actor domains based off the IOCs
+# Feed each threat actor domain through third-party APIs
+# Log each response from the third-party APIs
+# Analyze logged responses
+# Create a DB to store logged data over time
+# Create a caching system to prevent duplicate calls
+# Set up tool to be performed in batches 
+# Create an analysis and generate a report from each batch
+# Send report via webhook
+```
+
+Once I had this simple CLI tool implemented, I set up automated reporting. I deployed this tool on an AWS EC2 instance and scheduled a cron job to execute the CLI tool every X amount of days. I used an AWS Lambda function plus EventBridge Scheduler to optimize the bot's cost. This step isn't absolutely necessary, but I figured I might as well learn how to build a bot on a budget.
+
+
+
+## Outro
+
+If you complete the above steps, you can get fancy and add even better features to your bot. I eventually modified the bot to highlight key statistics. Overall, this project significantly impacted how engineers and decision-makers selected third-party vendors. After selection, this tool was used to track vendor progress over time.
+
+<center><img src="image-1.png" width="500" height="500"></center>
+
+## Helpful Tips
+
+It's important to note that this kind of tool is not useful unless you have done some threat hunting and have been able to distinguish threat actors targeting assets that are important to you. You must have relevant IOCs. One pitfall I've noticed about this tool is that I need to keep it fresh with new IOCs or stats about threat actors I'm tracking can be heavily skewed. 
+
+## Lessons Learned
+
+- Leveraging Cursor AI to become a 10x security engineer
+- DB optimization / building my own caching mechanism
+- Importance of extensive logging for in-house tools
+- Building custom alerts for teams using webhooks
+- Using cron jobs for a production-ready alerting system
+- AWS basics + AWS resource optimization
+
+
+
+
+
+
+
+
+
+
