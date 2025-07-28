@@ -1,7 +1,7 @@
 # How we Place top 12 in a bounty contest securing a Billion Dollar protocol
 
 ## Intro
-Some time ago, a good friend of mine and I decided to join a bounty contest with a few of the students we were teaching. We thought it would be a great learning experience for all of us. We got to learn how to lead an team of security researchers, learn about a new web3 protocol, and our students got to learn the full process of bug bounty huntin for blockchain dapps. Little did we know we submitted a single issue that lead to us winning ~1k USD and placing top 12 amongst 220 participants. See [Our report](https://github.com/sherlock-audit/2023-05-perennial-judging/issues/168) that we submitted. It was also cool to see a protocol (Perennial) we helped secure, move on to do $[3.77B USD in volume](https://defillama.com/protocol/perps/perennial). 
+Some time ago, a good friend of mine and I decided to join a bounty contest with a few of the students we were teaching. We thought it would be a great learning experience for all of us. We got to learn how to lead an team of security researchers, learn about a new web3 protocol, and our students got to learn the full process of bug bounty huntin for blockchain dapps. Little did we know we submitted a single issue that lead to us winning ~1k USD and placing top 12 amongst 220 participants. See [Our report](https://github.com/sherlock-audit/2023-05-perennial-judging/issues/168) that we submitted. It was also cool to see a protocol (Perennial) we helped secure, move on to do $[3.77B USD in volume](https://defillama.com/protocol/perps/perennial) and ~$3M USD in TVL. 
 
 
 ## How did we find the bug 
