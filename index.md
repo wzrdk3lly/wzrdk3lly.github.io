@@ -15,7 +15,7 @@ layout: default
 ### Education
 [I Co Lead a FREE Cybersecurity Course for Web Developers and Techies](https://www.youtube.com/watch?v=fSpjA5jxpkM&list=PLvO098fL4LhxIBKk7qf7xz3RbIThjLtwv&index=2)
 
-[My Livestreamed CTFs Walkthroughs](https://www.youtube.com/watch?v=tFtnL-kqbGk&list=PLvO098fL4LhzoQP0HMle_g7YQVdkML3zR)
+[My Livestreamed CTF Walkthroughs](https://www.youtube.com/watch?v=tFtnL-kqbGk&list=PLvO098fL4LhzoQP0HMle_g7YQVdkML3zR)
 
 ### Bounties
 
