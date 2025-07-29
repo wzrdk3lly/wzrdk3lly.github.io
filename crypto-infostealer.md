@@ -17,7 +17,7 @@ When detonating the payload in a [virus total sandbox](https://www.virustotal.co
 
 After detonating the malware, I was able to extract screenshots of it. Below is a screenshot showing the original UI translated to english. This UI is meant to trick victims into sending their SRP (Secret Recovery Phrase) and password to the threat actors. The secret recovery phrase is central to accessing all of the crypto assets in a user's wallet. 
 
-<center><img src="image-7.png""></center>
+<center><img src="image-7.png"></center>
 
 I extracted and evaluated the method calls made in the Android sandbox.  All of these method calls aren't necesarily malicious. They give insights into how the infostealer works under the hood. 
 
