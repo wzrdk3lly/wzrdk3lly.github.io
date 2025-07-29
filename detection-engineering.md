@@ -2,15 +2,15 @@
 
 ## Intro
 
-Without revealing too much about this custom tool, I want to walk through the high-level steps I took to build a deteciton rate bot. This tool can help any researcher who is interested in learning how to automate their process for detecting when a threat actor deploys a domain AND what tools do a great job at flagging these domains.
+ I want to walk through the high-level steps I took to build a deteciton rate bot. This tool can help any researcher who is interested in learning how to automate the process of detecting when a threat actor deploys a domain AND provide stats for tools that do a great job at flagging said domains.
 
-At a high level, the tool I built is a detection rate bot that captured newly deployed domains from threat actors and ran each of these domains through various third-party APIs. The output included detection rate stats for each third party and a full report of the gaps in each third party API. I set up this bot to run throughout the week and send my team and I a report. *Key info about threat actors and third-party tools has been redacted from the screenshot below.
+At a high level, this bot uses custom queries to monitor when a threat actor deploys a domain. Once a cluster of domains are collected, they are fed into various 3rd party security tools. The tool returns a report on which 3rd party tools do the best at flagging or detecting threat actor domains. I set up this bot to run throughout the week and send my team and I a report. *Key info about threat actors and third-party tools has been redacted from the screenshot below.
 
 <center><img src="image.png" width="800" height="500"></center>
 
 ## Tech Stack + Reqs
 
-Some things you'll need to recreate this kind of bot:
+Some things you'll need in order to recreate this kind of bot:
 
 - Python programming experience (Cursor AI is your friend, lol)
 - API access to search engines focused on connected devices (e.g., Shodan, ZoomEye)

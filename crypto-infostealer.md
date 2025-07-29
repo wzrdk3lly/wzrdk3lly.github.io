@@ -1,4 +1,4 @@
-# Malware Analysis: Taking a peak inside an Infostealer Campaign Targeting Crytpo Users
+# Malware Analysis: Levaraging Virus Total to Detonate and Analyze an Infostealer
 
 ### Context
 
@@ -8,19 +8,18 @@ When analysing various fund loss cases, I'll ocaisionally stumble on malware tar
 
 ### Summary![alt text](<image 1.png>)
 
-The user downloaded an Infostealer that functioned as a fake MetaMask extension. The fake MetaMask extension send’s the password and private keys that a user creates or imports to `lep.thxs.online` and `server.thxs.in`. In addition to this the infostealer came with functionality including, Accessing the devices clipboard, Monitoring network indicators, TLS Cert manipulation, and Accessibility Service Access
+When analyzing a case, I came into posession of an Infostealer that functioned as a fake MetaMask extension. The fake MetaMask extension sends the password and private keys that a user creates or imports. The private keys are sent to the following C2 servers `lep.thxs.online` and `server.thxs.in`. In addition to this, the infostealer leveraged some pretty interesting tactics to extract data from their victims. The tactics included gaining access to the devices clipboard, monitoring network indicators, TLS Cert manipulation, and accessibilty services access.
 
 ### Technical Analysis
 
-When detonating the payload in a [virus total sandbox](https://www.virustotal.com/gui/file/82b5190dbff8383a5917ebd4f1f69b35a649bd7f0ae40ac2c17c5e1a4e899c0c/behavior) we learned of all the invasive procedures in addition to the UI that the user was provided to harvest their SRP. 
+When detonating the payload in a [virus total sandbox](https://www.virustotal.com/gui/file/82b5190dbff8383a5917ebd4f1f69b35a649bd7f0ae40ac2c17c5e1a4e899c0c/behavior) we learned of all the invasive procedures in addition to the UI that targest victims. 
 
-User Interface Analysis 
 
-Below is a screenshot showing the original UI translated to english. This tricked a user into sending their SRP and password to the threat actors 
+After detonating the malware, I was able to extract screenshots of it. Below is a screenshot showing the original UI translated to english. This UI is meant to trick victims into sending their SRP (Secret Recovery Phrase) and password to the threat actors. The secret recovery phrase is central to accessing all of the crypto assets in a user's wallet. 
 
-![image-7.png]
+<center><img src="image-7.png""></center>
 
-Android Method Call Analysis 
+I extracted and evaluated the method calls made in the Android sandbox.  All of these method calls aren't necesarily malicious. They give insights into how the infostealer works under the hood. 
 
 ### **1. Clipboard Access**
 
@@ -191,9 +190,9 @@ Certificate checking - Indicates the attacker checking for if their certificate 
 
 ```
 
-### Conclusions
+### Outro
 
-The user downloaded an info stealer that posed as the Official MetaMask mobile app. The user lost funds after entering their SRP into the fake app. The Info stealer also gained system level privileges such as clipboard access which could be used to steal more data from the user. 
+This infostealer was pretty impressive to evaluate, espically considering it was not flagged by any of the vendors on Virus Total. Most of malware I encounter usually target Mac or Windows users. This was one of the first cases I handled that involved a malicious APK. 
 
 ### IOCS
 
