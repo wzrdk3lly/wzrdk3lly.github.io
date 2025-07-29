@@ -6,7 +6,7 @@ When analysing various fund loss cases, I'll ocaisionally stumble on malware tar
 
 
 
-### Summary![alt text](<image 1.png>)
+### Summary
 
 When analyzing a case, I came into posession of an Infostealer that functioned as a fake MetaMask extension. The fake MetaMask extension sends the password and private keys that a user creates or imports. The private keys are sent to the following C2 servers `lep.thxs.online` and `server.thxs.in`. In addition to this, the infostealer leveraged some pretty interesting tactics to extract data from their victims. The tactics included gaining access to the devices clipboard, monitoring network indicators, TLS Cert manipulation, and accessibilty services access.
 

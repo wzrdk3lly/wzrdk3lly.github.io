@@ -1,4 +1,4 @@
-# Detection Engineering: Building a Custom Detection Rate Bot
+# Detection Engineering: Building a Detection Rate Bot
 
 ## Intro
 

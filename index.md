@@ -6,7 +6,7 @@ layout: default
 
 [Malware Analysis: Levaraging Virus Total to Detonate and Analyze an Infostealer](./crypto-infostealer.md)
 
-[Detection Engineering: Building a Custom Detection Rate Bot](./detection-engineering.md)
+[Detection Engineering: Building a Detection Rate Bot](./detection-engineering.md)
 
 [Building FoxiProxi: Transaction Insights for Crypto Wallets](./foxiproxi-snap.md)
 
