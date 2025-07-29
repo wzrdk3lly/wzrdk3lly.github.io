@@ -4,16 +4,20 @@ layout: default
 
 ### Writeups
 
-[Malware Analysis: Levaraging Virus Total to Detonate and Analyze an Infostealer](./crypto-infostealer.md)
+
+[Malware Analysis: Leveraging VirusTotal to Detonate and Analyze an Infostealer](./crypto-infostealer.md)
 
 [Detection Engineering: Building a Detection Rate Bot](./detection-engineering.md)
 
 [Building FoxiProxi: Transaction Insights for Crypto Wallets](./foxiproxi-snap.md)
 
-[How we Placed 12th in a Bounty Contest and Helped Secure a Million Dollar Company](./perennial-bounty.md)
+
+[How We Placed Top 12 in a Bounty Contest Securing a Billion Dollar Protocol](./perennial-bounty.md)
 
 ### Education
-[I Co Lead a FREE Cybersecurity Course for Web Developers and Techies](https://www.youtube.com/watch?v=fSpjA5jxpkM&list=PLvO098fL4LhxIBKk7qf7xz3RbIThjLtwv&index=2)
+
+[I Co-Lead a FREE Cybersecurity Course for Web Developers and Techies](https://www.youtube.com/watch?v=fSpjA5jxpkM&list=PLvO098fL4LhxIBKk7qf7xz3RbIThjLtwv&index=2)
+
 
 [My Livestreamed CTF Walkthroughs](https://www.youtube.com/watch?v=tFtnL-kqbGk&list=PLvO098fL4LhzoQP0HMle_g7YQVdkML3zR)
 

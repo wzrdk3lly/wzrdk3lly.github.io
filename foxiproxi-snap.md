@@ -35,20 +35,20 @@ The repo can be [found here](https://github.com/wzrdk3lly/foxiproxi-snap).
 
 If you want to learn more about building snaps I suggest [you read the docs](https://docs.metamask.io/snaps/)
 
-Building this snap is pretty straigtforward. The objective is to consume JSON-RPC request that are initially sent to the wallet and then modify these request in any way you see fit. Most wallets normalize and abstract away JSON-RPC request data, so our goal was to capture this raw payload. You can do this with the [transaction insights](https://docs.metamask.io/snaps/features/transaction-insights/) snap feature. 
+Building this snap is pretty straightforward. The objective is to consume JSON-RPC requests that are initially sent to the wallet and then modify these requests in any way you see fit. Most wallets normalize and abstract away JSON-RPC request data, so our goal was to capture this raw payload. You can do this with the [transaction insights](https://docs.metamask.io/snaps/features/transaction-insights/) snap feature. 
 
-## Tool in action 
+## Tool in Action
 
-In the transaction below, I have proxied the request to a malicious eth address. With FoxiProxi I can now easily copy, modify, and re-send the modified transaction. 
+In the transaction below, I have proxied the request to a malicious ETH address. With FoxiProxi I can now easily copy, modify, and re-send the modified transaction. 
 
 <img src="image-3.png" width="400" height="400">
 
 ## Lessons Learned
 
-- Building an integration with limited documentation 
-- Working on a team for a production ready tool
-- How crypto wallets modify and process RPC request
-- Bookmarklets 
+- Building an integration with limited documentation
+- Working on a team for a production-ready tool
+- How crypto wallets modify and process RPC requests
+- Bookmarklets
 
 
 

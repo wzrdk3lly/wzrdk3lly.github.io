@@ -1,29 +1,26 @@
-# Malware Analysis: Levaraging Virus Total to Detonate and Analyze an Infostealer
+# Malware Analysis: Leveraging VirusTotal to Detonate and Analyze an Infostealer
 
 ### Context
 
-When analysing various fund loss cases, I'll ocaisionally stumble on malware targeting users SRPs. This is a simple breakdown of how you can analyze malware targeting crypto users and extract the proper IOCs from it. 
-
-
+When analyzing various fund loss cases, I'll occasionally stumble on malware targeting users' SRPs. This is a simple breakdown of how you can analyze malware targeting crypto users and extract the proper IOCs from it.
 
 ### Summary
 
-When analyzing a case, I came into posession of an Infostealer that functioned as a fake MetaMask extension. The fake MetaMask extension sends the password and private keys that a user creates or imports. The private keys are sent to the following C2 servers `lep.thxs.online` and `server.thxs.in`. In addition to this, the infostealer leveraged some pretty interesting tactics to extract data from their victims. The tactics included gaining access to the devices clipboard, monitoring network indicators, TLS Cert manipulation, and accessibilty services access.
+When analyzing a case, I came into possession of an infostealer that functioned as a fake MetaMask extension. The fake MetaMask extension sends the password and private keys that a user creates or imports. The private keys are sent to the following C2 servers: `lep.thxs.online` and `server.thxs.in`. In addition to this, the infostealer leveraged some pretty interesting tactics to extract data from its victims. The tactics included gaining access to the device's clipboard, monitoring network indicators, TLS cert manipulation, and accessibility services access.
 
 ### Technical Analysis
 
-When detonating the payload in a [virus total sandbox](https://www.virustotal.com/gui/file/82b5190dbff8383a5917ebd4f1f69b35a649bd7f0ae40ac2c17c5e1a4e899c0c/behavior) we learned of all the invasive procedures in addition to the UI that targest victims. 
+When detonating the payload in a [VirusTotal sandbox](https://www.virustotal.com/gui/file/82b5190dbff8383a5917ebd4f1f69b35a649bd7f0ae40ac2c17c5e1a4e899c0c/behavior), we learned of all the invasive procedures in addition to the UI that targets victims.
 
-
-After detonating the malware, I was able to extract screenshots of it. Below is a screenshot showing the original UI translated to english. This UI is meant to trick victims into sending their SRP (Secret Recovery Phrase) and password to the threat actors. The secret recovery phrase is central to accessing all of the crypto assets in a user's wallet. 
+After detonating the malware, I was able to extract screenshots of it. Below is a screenshot showing the original UI translated to English. This UI is meant to trick victims into sending their SRP (Secret Recovery Phrase) and password to the threat actors. The secret recovery phrase is central to accessing all of the crypto assets in a user's wallet.
 
 <center><img src="image-7.png"></center>
 
-I extracted and evaluated the method calls made in the Android sandbox.  All of these method calls aren't necesarily malicious. They give insights into how the infostealer works under the hood. 
+I extracted and evaluated the method calls made in the Android sandbox. All of these method calls aren't necessarily malicious, but they give insights into how the infostealer works under the hood.
 
 ### **1. Clipboard Access**
 
-The malicious APK accessed the devices clipboard manager
+The malicious APK accessed the device's clipboard manager
 
 ```
 1android.content.ContextWrappergetSystemService#binder(#3686) com.example.metamask
@@ -36,9 +33,9 @@ The malicious APK accessed the devices clipboard manager
 
 ---
 
-### **2. Supicious URL Loaded**
+### **2. Suspicious URL Loaded**
 
-This loads the phishing page and potentially acts as the C2 server for where all the critical information about the user is sent including the SRPs. 
+This loads the phishing page and potentially acts as the C2 server where all the critical information about the user is sent, including the SRPs.
 
 ```
 1android.webkit.WebViewloadUrl#network(#3686) com.example.metamask
@@ -51,7 +48,7 @@ This loads the phishing page and potentially acts as the C2 server for where all
 
 ### **3. Monitoring Proxy Changes**
 
-Indicates some form of network manipulation. 
+Indicates some form of network manipulation.
 
 ```
 1android.content.ContextWrapperregisterReceiver#binder(#3686) com.example.metamask
@@ -92,7 +89,7 @@ Monitors when the network is changed
 
 ### **6. Accessing Telephony Services**
 
-Telephony services contain critical information about the user and the user’s device (Phone provider, number etc) 
+Telephony services contain critical information about the user and the user’s device (phone provider, number, etc.)
 
 ```
 1android.content.ContextWrappergetSystemService#binder(#3686) com.example.metamask
@@ -107,7 +104,7 @@ Telephony services contain critical information about the user and the user’s 
 
 ### **7. Accessibility Service Access**
 
-Could be used for screen monitoring or overlaying incorrect information to the user 
+Could be used for screen monitoring or overlaying incorrect information to the user
 
 ```
 1android.content.ContextWrappergetSystemService#binder(#3686) com.example.metamask
@@ -122,7 +119,7 @@ Could be used for screen monitoring or overlaying incorrect information to the u
 
 ### **8. Reflection Usage (SSL/TLS Manipulation)**
 
-Certificate checking - Indicates the attacker checking for if their certificate was classified as malicious. 
+Certificate checking - Indicates the attacker checking if their certificate was classified as malicious.
 
 ```
 1java.lang.ClassgetMethod#reflect(#3686) com.example.metamask
@@ -192,9 +189,9 @@ Certificate checking - Indicates the attacker checking for if their certificate 
 
 ### Outro
 
-This infostealer was pretty impressive to evaluate, espically considering it was not flagged by any of the vendors on Virus Total. Most of malware I encounter usually target Mac or Windows users. This was one of the first cases I handled that involved a malicious APK. 
+This infostealer was pretty impressive to evaluate, especially considering it was not flagged by any of the vendors on VirusTotal. Most of the malware I encounter usually targets Mac or Windows users. This was one of the first cases I handled that involved a malicious APK.
 
-### IOCS
+### IOCs
 
 ```json
 https://lep.thxs.online/
@@ -206,4 +203,4 @@ https://lep.thxs.online/bridge
 
 ### References
 
-1. [Virus total report](https://www.virustotal.com/gui/file/82b5190dbff8383a5917ebd4f1f69b35a649bd7f0ae40ac2c17c5e1a4e899c0c/behavior)
+1. [VirusTotal report](https://www.virustotal.com/gui/file/82b5190dbff8383a5917ebd4f1f69b35a649bd7f0ae40ac2c17c5e1a4e899c0c/behavior)
